@@ -1,0 +1,10 @@
+Salut, asta e prima linie
+Asta e a doua linie
+
+Asta e a treia linie scrisa de Iulian
+
+Daca vezi chestiile astea, scrie si tu printre ele
+sau sterge ce am scris eu si scrie altceva. Ca sa vad si eu
+ceea ce faci tu trebuie sa apesi Commit . Asa comiti
+un update pe server :)
+
