@@ -45,6 +45,7 @@ IF !SEEK(pcCheie, 'vanzari', 'tcheie')
 
 MESSAGEBOX('Nu gasesc vanzarea cu cheia' + pcCheie, 0+16, 'Nu se poate modifica')
 
+   * Aici este un comentariu nou facut de Iulian
     **********
     RETURN .F.
     ********** 
