@@ -1,0 +1,85 @@
+PARAMETERS pcCheie
+
+********************************************************************************************
+* autor:         Iulian Sot
+* data creerii:  2013 05 12
+* versiunea:     96
+* ce face:       
+*
+* remarci:       
+* modificari:    
+********************************************************************************************
+
+
+* declara variabilele locale -----------------------------------------------
+
+
+* initializeaza variabilele locale -----------------------------------------
+
+
+* corpul functiei propriuzise ----------------------------------------------
+
+
+
+* setarea layout-ului ferestrei ............................................
+* pune borderul pe single ca sa nu poata userul sa mareasca fereastra
+this.BorderStyle = 1 && SingleFixed
+* ..........................................................................
+
+
+
+* setarea contoalelor de pe fereastra ......................................
+*!*	thisform.smartTEXTBOX1.text1.Value = IIF(TYPE('pnRecIDDeponent')='N',;
+*!*	                                         GetFurCliName(pnRecIdDeponent, .T.) ,;
+*!*	                                         '';
+*!*	                                        )
+
+* cauta inregistrarea cu cheia trimisa ca si parametru
+
+IF !SEEK(pcCheie, 'vanzari', 'tcheie')
+
+MESSAGEBOX('Nu gasesc vanzarea cu cheia' + pcCheie, 0+16, 'Nu se poate modifica')
+
+    **********
+    RETURN .F.
+    ********** 
+ 
+ENDIF 
+
+IF !SEEK(vanzari.checod, 'cod', 'tcheie')
+
+
+    **********
+    RETURN .F.
+    ********** 
+ 
+ENDIF 
+
+IF !SEEK(vanzari.cheangajat, 'angajati', 'tcheie')
+
+
+    **********
+    RETURN .F.
+    ********** 
+ 
+ENDIF 
+
+
+thisform.critfilttb1.text1.Value                      = ALLTRIM(docum.cheie)
+
+thisform.critfiltstb1.smarttextbox1._textbox1.Value   = ALLTRIM(cod.name)
+thisform.critfiltstb1.smarttextbox1.secondreturnvalue = ALLTRIM(cod.cheie)
+
+thisform.critfilttb2.teXT1.Value                      = ALLTRIM(vanzari.obs)
+thisform.critfilttb3.teXT1.Value                      = vanzari.pret
+
+thisform.critfiltstb2.smarttextbox1._textbox1.Value   = ALLTRIM(angajati.name)
+thisform.critfiltstb2.smarttextbox1.secondreturnvalue = ALLTRIM(angajati.cheie)
+
+
+
+
+* ..............................................................................
+
+
+
